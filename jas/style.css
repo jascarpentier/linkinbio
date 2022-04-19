@@ -1,12 +1,12 @@
 /* color palette from https://www.color-hex.com/color-palettes */
 :root {
-  --darkest-color: #064273;
-  --lightest-color: #def3f6;
+  --darkest-color: #f8f8fd;
+  --lightest-color: #e5d0ba;
   --highlight-color: #ffffff;
-  --bright-color-1: #1da2d8;
+  --bright-color-1: #eedcb6;
   --bright-color-2: #76b6c4;
-  --bright-color-3: #7fcdff;
-  --bright-color-4: #6093d2;
+  --bright-color-3: 	#dc8168;
+  --bright-color-4: #8fb0b7;
 }
 
 body {
@@ -71,7 +71,7 @@ a {
 .highlighted,
 .link-list-item:hover,
 a:hover {
-  color: var(--highlight-color);
+  /* color: var(--highlight-color); */
   border-color: var(--highlight-color);
   text-shadow: 0 0 2em var(--highlight-color);
 }
@@ -96,4 +96,62 @@ a:hover {
 
 .bright {
   background: var(--bright-color-4);
+}
+
+
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 4vmin;
+  line-height: 5vmin;
+}
+
+.gradient-text {
+  color: transparent;
+  background: conic-gradient(
+    #D9D7F1 12%, 
+    #BAABDA 12%, #BAABDA 33%, 
+    #E7FBBE 33%, #E7FBBE 55%, 
+    #FFCBCB 55%, #FFCBCB 70%, 
+    #B5DEFF 70%, #B5DEFF 87%, 
+    #F7D1BA 87%);
+  background-size: 20%;
+  background-clip: text;  
+  -webkit-background-clip: text;
+  animation: expand-rev 0.5s ease forwards;
+  cursor: pointer;
+}
+
+.gradient-text:hover {
+  animation: expand 0.5s ease forwards;
+}
+
+@keyframes expand {
+  0% {
+    background-size: 50%;
+    background-position: 0 0;
+  }
+  20% {
+    background-size: 55%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 32%;
+    background-position: -10em -4em;
+  }
+}
+
+@keyframes expand-rev {
+  0% {
+    background-size: 32%;
+    background-position: -10em -4em;
+  }
+  20% {
+    background-size: 45%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 50%;
+    background-position: 0 0;
+  }
 }
